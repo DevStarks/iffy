@@ -6,12 +6,12 @@
 
 Iffy is an application for tenants to rate their landlords/management companies.
 
-By 12/14, this app will demonstrate the following features with production-quality navigation, adequate seed data for a realistic experience, and appropriate CSS styling:
+By 12/23 this app will demonstrate the following features with production-quality navigation and appropriate CSS styling:
 
 - Rental Show Page
 - Search
 - Reviews / ratings
-- Map
+- Map Integration
 - Mark reviews useful
 - User Profile
 
@@ -23,9 +23,9 @@ By 12/14, this app will demonstrate the following features with production-quali
 - [Sample State](./docs/sample-state.md)
 
 ---
-### Implementation Timeline
+<!-- ### Implementation Timeline
 
-##### Phase 1: Backend setup and Front End User Authentication (2 days)
+##### Phase 1: Backend setup and Front End User Authentication (1 day)
 <br/>
 **Objective**: Functioning rails project with front-end Authentication
 
@@ -107,4 +107,4 @@ Edit feature
 - Message Search
 - Teams
 - Notifications
-- Reactions
+- Reactions -->
