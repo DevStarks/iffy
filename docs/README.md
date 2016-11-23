@@ -19,9 +19,7 @@ By 12/14, this app will demonstrate the following features with production-quali
 ### Design Docs
 - [View Wireframes](./docs/wireframes)
 - [React Components](./docs/component-heirarchy.md)
-- [API Endpoints](./docs/api-endpoints.md)
 - [DB Schema](./docs/schema.md)
-- [Redux Structure](./docs/redux-structure.md)
 - [Sample State](./docs/sample-state.md)
 
 ---
