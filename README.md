@@ -1,6 +1,4 @@
-# Slakk
-
-[Heroku link](https://slakk.herokuapp.com/)
+# Iffy
 
 ### Minimum Viable Product
 
