@@ -1,10 +1,13 @@
 class Api::UsersController < ApplicationController
 
-  respond_to :json
-
   def create
     @user = User.create(user_params)
-    respond_with(@user)
+    if @user.save
+      login!(@user)
+      render json: @user
+    else
+      render json: @user.errors.full_messages, status: 422
+    end
   end
 
   private
