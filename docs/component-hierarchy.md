@@ -5,7 +5,7 @@
     - LoginForm
     - SignupForm
     - SearchBar
-     - SearchResultsPage
+      - SearchResultsPage
   - RentalsIndex
     - RentalDetail
       - StarRating
@@ -20,7 +20,7 @@
       - StarRating
 
 **NewRentalForm**
-  
+
 **RentalShow**
   - Header
     - LoginForm

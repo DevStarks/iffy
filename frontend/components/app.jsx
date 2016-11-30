@@ -3,7 +3,7 @@ import React from 'react';
 const App = ({ children }) => {
   return (
     <div>
-      <p>Iffy</p>
+      <Header />
       {children}
     </div>
   );
