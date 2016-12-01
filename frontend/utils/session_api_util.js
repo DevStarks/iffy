@@ -1,5 +1,7 @@
 var request = require('xhr-request');
 
+
+
 export const signup = (user, success, error) => {
   request('api/users', {
     method: 'POST',
@@ -11,10 +13,12 @@ export const signup = (user, success, error) => {
 };
 
 export const login = (user, success, error) => {
+  const CSRF = document.querySelector('meta[name=csrf-token]').content;
   request('api/session', {
     method: 'POST',
     body: { user },
-    json: true
+    json: true,
+    headers: { 'X-CSRF-Token': CSRF }
   }, (err, data) => {
     return err ? error(data) : success(data);
   });

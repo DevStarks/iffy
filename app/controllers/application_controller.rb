@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @current_user ||= User.find_by(session_token: session[:session_token])
+    @current_user ||= SessionToken.joins(:user).find_by_token(session[:session_token])
   end
 
   def login!(user)
@@ -25,13 +25,5 @@ class ApplicationController < ActionController::Base
     session[:session_token] = nil
     @current_user = nil
   end
-
-  # after_action :set_csrf_cookie
-  #
-  # def set_csrf_cookie
-  #   if protect_against_forgery?
-  #     cookies['XSRF-TOKEN'] = form_authenticity_token
-  #   end
-  # end
 
 end

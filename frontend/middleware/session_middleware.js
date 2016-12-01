@@ -6,6 +6,7 @@ const SessionMiddleware = ({ dispatch }) => next => action => {
   const success = user => {
     dispatch(ACT.receiveCurrentUser(user));
   };
+  debugger
 
   const error = xhr => dispatch(ACT.receiveSessionErrors(xhr.responseJSON));
 

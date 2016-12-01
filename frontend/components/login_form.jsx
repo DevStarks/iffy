@@ -4,7 +4,6 @@ import { login } from '../actions/session_actions';
 
 // Presentational component
 
-
 class LoginForm extends React.Component {
 
   constructor() {
@@ -16,6 +15,7 @@ class LoginForm extends React.Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(e) {
@@ -24,11 +24,18 @@ class LoginForm extends React.Component {
     this.setState({ [input.name]: input.value });
   }
 
+  handleSubmit(e) {
+    debugger
+    e.preventDefault();
+    this.props.login(this.state);
+  }
+
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit} onChange={this.handleChange}>
         <input type="text" name="email" placeholder="email"></input>
         <input type="password" name="password" placeholder="password"></input>
+        <button type="submit"></button>
       </form>
     );
   }
@@ -46,5 +53,5 @@ const mapDispatchToProps = dispatch => ({
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  { login }
 )(LoginForm);
