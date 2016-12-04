@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Modal from 'react-modal';
 import SignupForm from './signup_form';
 import LoginForm from './login_form';
+import { withRouter } from 'react-router';
 
 // Presentational component
 
@@ -20,6 +21,7 @@ class Header extends React.Component {
     this.closeLoginModal = this.closeLoginModal.bind(this);
     this.openSignupModal = this.openSignupModal.bind(this);
     this.closeSignupModal = this.closeSignupModal.bind(this);
+    this.showSearchBar = this.showSearchBar.bind(this);
   }
 
   authHelper() {
@@ -99,11 +101,21 @@ class Header extends React.Component {
     );
   }
 
+  showSearchBar() {
+    if (this.props.location.hash === "") {
+      return;
+    } else {
+      return (
+        <h2>SearchBar</h2>
+      );
+    }
+  }
+
   render() {
     return(
       <header>
         <h2>LOGO</h2>
-        <h2>SearchBar</h2>
+        {this.showSearchBar()}
         {this.authHelper()}
       </header>
     );
@@ -119,4 +131,4 @@ const mapStateToProps = ({ session }) => ({
 export default connect(
   mapStateToProps,
   {}
-)(Header);
+)(withRouter(Header));

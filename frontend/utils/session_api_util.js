@@ -1,24 +1,23 @@
-var request = require('xhr-request');
-
-
+import request from 'xhr-request';
+import { getCSRFToken } from '../helpers/api_helpers';
 
 export const signup = (user, success, error) => {
   request('api/users', {
     method: 'POST',
     body: { user },
-    json: true
+    json: true,
+    headers: { 'X-CSRF-Token': getCSRFToken() }
   }, (err, data) => {
     return err ? error(data) : success(data);
   });
 };
 
 export const login = (user, success, error) => {
-  const CSRF = document.querySelector('meta[name=csrf-token]').content;
   request('api/session', {
     method: 'POST',
     body: { user },
     json: true,
-    headers: { 'X-CSRF-Token': CSRF }
+    headers: { 'X-CSRF-Token': getCSRFToken() }
   }, (err, data) => {
     return err ? error(data) : success(data);
   });
@@ -27,7 +26,8 @@ export const login = (user, success, error) => {
 export const logout = (success, error) => {
   request('api/session', {
     method: 'DELETE',
-    json: true
+    json: true,
+    headers: { 'X-CSRF-Token': getCSRFToken() }
   }, (err, data) => {
     return err ? error(data) : success(data);
   });
