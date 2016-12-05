@@ -1,0 +1,39 @@
+
+
+.header {
+  font-size: 46px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .header-nav {
+    background-color: #eeeeee;
+
+    &:before {
+      content: url(image-path('icons/menu.svg'));
+      display: block;
+      height: 100px;
+      width: 100px;
+    }
+
+    li {
+      padding: 0.5em;
+    }
+  }
+}
+// desktop
+
+@media screen and (min-device-width:801px) {
+  .header {
+    padding: 1em 2em;
+
+    .header-nav {
+      width: auto;
+      display: flex;
+
+      li {
+        padding: 0.5em;
+      }
+    }
+  }
+}

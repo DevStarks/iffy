@@ -32,13 +32,14 @@ class Header extends React.Component {
       );
     } else {
       return (
-        <div>
-          <button onClick={this.openLoginModal}>Log In</button>
-          <button onClick={this.openSignupModal}>Sign Up</button>
+        <ul className="header-nav">
+          <li onClick={this.openLoginModal}>Log In</li>
+          <li onClick={this.openSignupModal}>Sign Up</li>
 
           {this.signupModal()}
           {this.loginModal()}
-        </div>
+
+        </ul>
       );
     }
   }
@@ -113,7 +114,7 @@ class Header extends React.Component {
 
   render() {
     return(
-      <header>
+      <header className="header">
         <h2>LOGO</h2>
         {this.showSearchBar()}
         {this.authHelper()}
